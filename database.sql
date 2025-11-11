@@ -1,0 +1,98 @@
+-- Database schema for Gram Panchayat Urdhul
+CREATE DATABASE IF NOT EXISTS gp_urdhul CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE gp_urdhul;
+
+CREATE TABLE IF NOT EXISTS admin (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(64) UNIQUE NOT NULL,
+	password_hash VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS staff (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(128) NOT NULL,
+	position VARCHAR(128) NOT NULL,
+	phone VARCHAR(32),
+	photo VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS projects (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(200) NOT NULL,
+	year INT,
+	fund VARCHAR(64),
+	status VARCHAR(64),
+	photo VARCHAR(255),
+	description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS village_info (
+	`key` VARCHAR(100) PRIMARY KEY,
+	`value` TEXT
+);
+
+CREATE TABLE IF NOT EXISTS news (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(200) NOT NULL,
+	summary TEXT NOT NULL,
+	image VARCHAR(255),
+	date DATE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS achievements (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(200) NOT NULL,
+	description TEXT NOT NULL,
+	image VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS tourist_places (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(200) NOT NULL,
+	description TEXT,
+	image VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS notices (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(200) NOT NULL,
+	content TEXT NOT NULL,
+	date DATE NOT NULL,
+	attachment VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS statistics (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	metric VARCHAR(200) UNIQUE NOT NULL,
+	value VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS qr_codes (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(200) NOT NULL,
+	description TEXT,
+	image VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS caste_stats (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	caste VARCHAR(200) NOT NULL,
+	women INT DEFAULT 0,
+	men INT DEFAULT 0,
+	total INT DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS complaints (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(128),
+	email VARCHAR(200) NOT NULL,
+	message TEXT NOT NULL,
+	date DATETIME NOT NULL
+);
+
+-- Seed: admin user (password: admin123 — please change after first login)
+INSERT INTO admin (username, password_hash)
+VALUES ('admin', '$2y$10$9e9Yj3TzS8tJwZ0Q7Gf1pu7lC0P7mU7hLkqV1c8K7JtM0WwZkVnQ6')
+ON DUPLICATE KEY UPDATE username = username;
+
+

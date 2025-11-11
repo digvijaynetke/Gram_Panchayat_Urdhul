@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gram Panchayat Urdhul</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<!-- Top Header -->
+	<div class="top-header">
+		<div class="container">
+			<div class="top-left">
+				<span id="contact-phone">+91-0000000000</span>
+				<span id="contact-email">info@urdhulpanchayat.in</span>
+			</div>
+			<div class="top-right">
+				<div class="lang-switch">
+					<button class="lang-btn" data-lang="en">English</button>
+					<button class="lang-btn" data-lang="hi">हिंदी</button>
+					<button class="lang-btn" data-lang="mr">मराठी</button>
+				</div>
+				<div class="social">
+					<a href="#" aria-label="Instagram" class="social-ic instagram"></a>
+					<a href="#" aria-label="YouTube" class="social-ic youtube"></a>
+					<a href="#" aria-label="Facebook" class="social-ic facebook"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main Header -->
+	<header class="main-header">
+		<div class="container header-row">
+			<div class="logo">
+				<img src="assets/images/panchayat_logo.png" alt="Gram Panchayat Urdhul Logo" onerror="this.style.display='none'">
+				<div class="site-title">
+					<h1 data-i18n="site_title">Gram Panchayat Urdhul</h1>
+					<p data-i18n="site_tagline">Transparency • Service • Development</p>
+				</div>
+			</div>
+			<nav class="nav">
+				<ul>
+					<li><a href="#about" data-i18n="nav_about">About Us</a></li>
+					<li><a href="#news" data-i18n="nav_news">News / Updates</a></li>
+					<li><a href="#awards" data-i18n="nav_awards">Awards</a></li>
+					<li><a href="#tourism" data-i18n="nav_tourism">Tourist Destinations</a></li>
+					<li><a href="#gallery" data-i18n="nav_gallery">Photo Gallery</a></li>
+					<li><a href="#contact" data-i18n="nav_contact">Get in Touch</a></li>
+				</ul>
+			</nav>
+			<div class="cta">
+				<button id="openComplaint" class="btn btn-accent" data-i18n="btn_complaint">Report a Complaint</button>
+			</div>
+		</div>
+	</header>
+
+	<!-- Hero Slider -->
+	<section class="hero" id="hero">
+		<div class="slider">
+			<div class="slide active" style="background-image:url('assets/images/hero/slide1.jpg')"></div>
+			<div class="slide" style="background-image:url('assets/images/hero/slide2.jpg')"></div>
+			<div class="slide" style="background-image:url('assets/images/hero/slide3.jpg')"></div>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section class="section" id="about">
+		<div class="container">
+			<h2 data-i18n="about_heading">Welcome to Our Village</h2>
+			<p data-i18n="about_text">
+				Urdhul is a vibrant village committed to transparency and development under the Gram Panchayat.
+			</p>
+			<div class="about-media">
+				<video id="aboutVideo" src="assets/videos/welcome.mp4" muted autoplay loop playsinline></video>
+			</div>
+		</div>
+	</section>
+
+	<!-- Panchayat Staff -->
+	<section class="section alt" id="staff">
+		<div class="container">
+			<h2>ग्रामपंचायतीतील कामकाज</h2>
+			<div class="table-responsive">
+				<table>
+					<thead>
+						<tr>
+							<th>पद</th>
+							<th>संपूर्ण नाव</th>
+							<th>संपर्क क्रमांक</th>
+							<th>फोटो</th>
+						</tr>
+					</thead>
+					<tbody id="staffTableBody">
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+			<div class="staff-grid" id="staffGrid">
+				<!-- Photo cards dynamically -->
+			</div>
+		</div>
+	</section>
+
+	<!-- Panchayat Building Photo -->
+	<section class="section" id="building">
+		<div class="container">
+			<div class="full-photo">
+				<img src="assets/images/panchayat_building.jpg" alt="Panchayat Building">
+			</div>
+		</div>
+	</section>
+
+	<!-- Development Works -->
+	<section class="section alt" id="projects">
+		<div class="container">
+			<h2>विकास कामे</h2>
+			<div class="table-responsive">
+				<table>
+					<thead>
+						<tr>
+							<th>क्र.</th>
+							<th>कामाचे नाव</th>
+							<th>वर्ष</th>
+							<th>निधी</th>
+							<th>स्थिती</th>
+							<th>फोटो</th>
+						</tr>
+					</thead>
+					<tbody id="projectsTableBody">
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- About the Village -->
+	<section class="section" id="village-info">
+		<div class="container">
+			<h2>गावाबद्दल माहिती</h2>
+			<div class="table-responsive">
+				<table id="villageInfoTable">
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Ideals / Vision -->
+	<section class="section alt" id="ideals">
+		<div class="container">
+			<h2>ग्रामपंचायत आदर्श तक्ता</h2>
+			<div class="table-responsive">
+				<table id="idealsTable">
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Education Institutions -->
+	<section class="section" id="education">
+		<div class="container">
+			<h2>शिक्षण संस्था यादी</h2>
+			<div class="table-responsive">
+				<table id="eduTable">
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Health Institutions -->
+	<section class="section alt" id="health">
+		<div class="container">
+			<h2>आरोग्य संस्था यादी</h2>
+			<div class="table-responsive">
+				<table id="healthTable">
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Awards / Achievements -->
+	<section class="section" id="awards">
+		<div class="container">
+			<h2>Awards / Achievements</h2>
+			<div class="card-grid" id="awardsGrid">
+				<!-- Cards dynamically -->
+			</div>
+			<div class="center">
+				<button id="loadMoreAwards" class="btn">See more</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tourist Places -->
+	<section class="section alt" id="tourism">
+		<div class="container">
+			<h2>Tourist Places</h2>
+			<div class="gallery-grid" id="tourismGrid">
+				<!-- Images dynamically -->
+			</div>
+		</div>
+	</section>
+
+	<!-- News / Updates -->
+	<section class="section" id="news">
+		<div class="container">
+			<h2>News / Updates</h2>
+			<div class="news-row" id="newsRow">
+				<!-- News cards dynamically -->
+			</div>
+			<div class="center">
+				<button id="loadMoreNews" class="btn">See more</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Village Statistics -->
+	<section class="section alt" id="stats">
+		<div class="container">
+			<h2>Village Statistics</h2>
+			<div class="table-responsive">
+				<table id="statsTable">
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Notice Board -->
+	<section class="section" id="notices">
+		<div class="container">
+			<h2>Notice Board</h2>
+			<ul class="notice-list" id="noticeList">
+				<!-- Loaded dynamically -->
+			</ul>
+		</div>
+	</section>
+
+	<!-- Online Payment (QR) -->
+	<section class="section alt" id="payments">
+		<div class="container">
+			<h2>Online Payment</h2>
+			<div class="qr-row">
+				<div class="qr-card">
+					<img src="assets/images/qr/house_tax.png" alt="House Tax QR" class="qr-img">
+					<p>Scan the QR code below to pay your house tax and make easy online payments…</p>
+				</div>
+				<div class="qr-card">
+					<img src="assets/images/qr/water_bill.png" alt="Water Bill QR" class="qr-img">
+					<p>Scan the QR code below to pay your water bill and make easy online payments…</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Caste Statistics -->
+	<section class="section" id="caste">
+		<div class="container">
+			<h2>Caste Statistics</h2>
+			<div class="table-responsive">
+				<table id="casteTable">
+					<thead>
+						<tr>
+							<th>Caste / Society</th>
+							<th>Women</th>
+							<th>Men</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Loaded dynamically -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- Your Voice, Our Duty -->
+	<section class="section highlight" id="voice">
+		<div class="container center">
+			<h2>Your Voice, Our Duty</h2>
+			<button class="btn btn-accent" id="openComplaint2">Report a Complaint</button>
+		</div>
+	</section>
+
+	<!-- Contact / Footer -->
+	<footer class="footer" id="contact">
+		<div class="container footer-grid">
+			<div>
+				<h3>Contact</h3>
+				<p id="footer-address">Gram Panchayat Urdhul, Chandvad, Nashik</p>
+				<p id="footer-phone">Phone: +91-0000000000</p>
+				<p id="footer-email">Email: info@urdhulpanchayat.in</p>
+			</div>
+			<div>
+				<h3>Social</h3>
+				<p>
+					<a href="#">Instagram</a> |
+					<a href="#">YouTube</a> |
+					<a href="#">Facebook</a>
+				</p>
+			</div>
+			<div>
+				<h3>Links</h3>
+				<p><a href="admin/login.php">Admin</a></p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>© <span id="year"></span> Gram Panchayat Urdhul</p>
+		</div>
+	</footer>
+
+	<!-- Complaint Modal -->
+	<div class="modal" id="complaintModal" aria-hidden="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-dialog">
+			<button class="modal-close" data-close>&times;</button>
+			<h3>Report a Complaint</h3>
+			<form id="complaintForm" method="post" action="includes/submit_complaint.php">
+				<div class="form-row">
+					<label for="name">Name (optional)</label>
+					<input type="text" id="name" name="name">
+				</div>
+				<div class="form-row">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-row">
+					<label for="message">Complaint</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn btn-accent">Submit</button>
+				</div>
+				<div id="complaintSuccess" class="form-success" style="display:none;"></div>
+				<div id="complaintError" class="form-error" style="display:none;"></div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Generic Image Modal (video/image enlarge) -->
+	<div class="modal" id="mediaModal" aria-hidden="true">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-dialog media-dialog">
+			<button class="modal-close" data-close>&times;</button>
+			<div id="mediaModalBody"></div>
+		</div>
+	</div>
+
+	<script src="assets/js/main.js"></script>
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
+
+
